@@ -53,7 +53,7 @@
       <div class="row">
         <div class="col">
           <button
-            class="btn btn-action-2 btn-lg btn-block mt-3 btn-validate btn-secondary">
+            :disabled="loading" class="btn btn-action-2 btn-lg btn-block mt-3 btn-validate btn-secondary">
             
             <div v-if="!loading">
               Ingresar a mi cuenta
