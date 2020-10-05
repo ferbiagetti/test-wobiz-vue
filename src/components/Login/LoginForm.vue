@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import { httpsWobizBackend } from "../../share.js";
+import axios from 'axios';
 import AlertComponent from "../share/alert/Alert";
 import SpinnerComponent from '../share/spinner/Spinner';
 
@@ -123,8 +123,6 @@ export default {
     },
     login() {
       this.isSubmit = true;
-      console.log('pass', this.errors.password.valid)
-      console.log('email', this.errors.email.valid)
       if(!this.errors.password.valid || !this.errors.email.valid) {
         return;
       } 
@@ -133,8 +131,8 @@ export default {
         username: this.username,
         password: this.password,
       };
-      httpsWobizBackend
-        .post("/login", body)
+      axios
+        .post("https://powerful-crag-90877.herokuapp.com/login", body)
         .then((response) => {
           if (response.data && response.data.codigo === 200) {
             localStorage.setItem("token", response.token);
