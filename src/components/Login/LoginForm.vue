@@ -88,7 +88,7 @@ export default {
       showWrongData: false,
       wrongDataMsj: "",
       errors: {
-        email: { valid: false, error: 'Necesitamos tu contraseña.' },
+        email: { valid: false, error: 'Necesitamos tu email.' },
         password: { valid: false, error: 'Necesitamos tu contraseña.' },
       },
     };
